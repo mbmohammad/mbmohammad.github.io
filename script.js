@@ -86,4 +86,16 @@ document.addEventListener('DOMContentLoaded', () => {
             scrollToTopBtn.style.visibility = 'hidden';
         }
     });
-}); 
+});
+
+function copyEmail(event) {
+    event.preventDefault();
+    const email = 'mohammadmohammadbeigi1381@gmail.com';
+    navigator.clipboard.writeText(email).then(() => {
+        const copyMessage = document.getElementById('copyMessage');
+        copyMessage.style.display = 'inline';
+        setTimeout(() => {
+            copyMessage.style.display = 'none';
+        }, 2000);
+    });
+} 
