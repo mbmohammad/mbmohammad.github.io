@@ -420,18 +420,25 @@ ul {
     gap: 2rem;
     flex-wrap: wrap;
     position: relative;
+    text-align: center;
 }
 
 .welcome-contact p {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    justify-content: center;
+    width: 100%;
 }
 
 .welcome-contact a {
     color: white;
     text-decoration: none;
     transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
 }
 
 .welcome-contact a:hover {
@@ -733,6 +740,15 @@ ul {
     .welcome-contact {
         flex-direction: column;
         gap: 1rem;
+        align-items: center;
+    }
+
+    .welcome-contact p {
+        justify-content: center;
+    }
+
+    .welcome-contact a {
+        justify-content: center;
     }
 
     .link-grid {
