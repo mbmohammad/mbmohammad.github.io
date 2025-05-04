@@ -740,15 +740,6 @@ ul {
     .welcome-contact {
         flex-direction: column;
         gap: 1rem;
-        align-items: center;
-    }
-
-    .welcome-contact p {
-        justify-content: center;
-    }
-
-    .welcome-contact a {
-        justify-content: center;
     }
 
     .link-grid {
