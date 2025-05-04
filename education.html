@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education - Mohammad Mohammad Beigi</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="profile.jpg" alt="Profile" class="nav-profile-img">
+                <span>Mohammad Mohammad Beigi</span>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="education.html" class="active"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                <li><a href="experience.html"><i class="fas fa-briefcase"></i> Experience</a></li>
+                <li><a href="skills.html"><i class="fas fa-code"></i> Skills</a></li>
+                <li><a href="achievements.html"><i class="fas fa-trophy"></i> Achievements</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Education Section -->
+    <main class="container">
+        <section class="education-section">
+            <h1>Education</h1>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Sharif University of Technology</h3>
+                        <p class="institution">B.Sc. in Electrical Engineering (First Major)</p>
+                        <p class="institution">B.Sc. in Computer Science (Second Major)</p>
+                        <p class="date">September 2020 - Present</p>
+                        <p class="description">
+                            Total GPA: 3.66 / 4.00 - 17.32 / 20.00
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Helli 1 High School</h3>
+                        <p class="institution">Diploma in Mathematics</p>
+                        <p class="date">September 2018 - August 2020</p>
+                        <p class="description">
+                            GPA: 19.83 / 20.00
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="certifications-section">
+            <h2>Passed Courses</h2>
+            <div class="certifications-grid">
+                <div class="certification-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>Neuroscience</h3>
+                    <ul>
+                        <li>Foundations of Neuroscience - Dr. A. Ghazizadeh</li>
+                        <li>Advanced Topics in Neuroscience - Dr. A. Ghazizadeh</li>
+                        <li>Visual Neuroscience - Dr. R. Ebrahimpour</li>
+                        <li>Biological Computations - Dr. S. Hajipour</li>
+                        <li>Dynamical Systems Learning Brain Machine - Dr. R. Ebrahimpour</li>
+                    </ul>
+                </div>
+                <div class="certification-card">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3>Biomedical Engineering</h3>
+                    <ul>
+                        <li>Medical Image Processing</li>
+                        <li>Biomedical Signal Processing</li>
+                        <li>EEG Signal Processing</li>
+                    </ul>
+                </div>
+                <div class="certification-card">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Important Courses</h3>
+                    <ul>
+                        <li>Machine Learning</li>
+                        <li>Deep Learning</li>
+                        <li>Advanced Operational Research</li>
+                        <li>Coding Theory</li>
+                        <li>Stochastic Processes</li>
+                        <li>Statistics</li>
+                        <li>Convex Optimization</li>
+                        <li>Advanced Topics in Probability</li>
+                        <li>Game Theory</li>
+                        <li>Golang programming (Computer Technology)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html> 

@@ -3,311 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammad Mohammad Beigi - CV</title>
+    <title>Mohammad Mohammad Beigi - Welcome</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="profile.jpg" alt="Profile Photo" class="nav-profile-img">
+                <span>Mohammad Mohammad Beigi</span>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="education.html"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                <li><a href="experience.html"><i class="fas fa-briefcase"></i> Experience</a></li>
+                <li><a href="skills.html"><i class="fas fa-code"></i> Skills</a></li>
+                <li><a href="achievements.html"><i class="fas fa-trophy"></i> Achievements</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <div class="container">
-        <header>
-            <div class="profile">
-                <img src="profile.jpg" alt="Profile Photo" class="profile-img">
-                <h1>Mohammad Mohammad Beigi</h1>
-                <div class="contact-info">
-                    <p><i class="fas fa-phone"></i> (+98) 9903721609</p>
-                    <p><i class="fab fa-github"></i> <a href="https://github.com/mbmohammad" target="_blank">Github</a></p>
-                    <p><i class="fas fa-envelope"></i> <a href="mailto:mohammadmohammadbeigi1381@gmail.com" onclick="copyEmail(event)">Email</a><span id="copyMessage" style="display: none; margin-left: 5px; color: var(--accent-color);">Address copied</span></p>
+        <header class="welcome-header">
+            <div class="welcome-content">
+                <h1>Welcome to My Professional Portfolio</h1>
+                <p class="welcome-text">
+                    I am a passionate Computer Science and Electrical Engineering student with expertise in deep learning, programming, 
+                    image processing, and artificial intelligence. 
+                </p>
+                
+                <div class="welcome-contact">
+                    <a href="mailto:mohammadmohammadbeigi1381@gmail.com" id="emailLink">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                    <div id="copyMessage" class="copy-message">Address Copied</div>
+                    <p><i class="fas fa-map-marker-alt"></i> <span>Tehran, Iran</span></p>
                 </div>
             </div>
         </header>
 
-        <main>
-            <section class="education">
-                <h2><i class="fas fa-graduation-cap"></i> EDUCATION</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <h3>Sharif University of Technology</h3>
-                        <p class="date">September 2020 - Present</p>
-                        <p>B.Sc. in Electrical Engineering</p>
-                        <p>B.Sc. in Computer Science</p>
-                        <p>Total GPA: 3.66 / 4.00 - 17.32 /20.00</p>
-                    </div>
-                    <div class="timeline-item">
-                        <h3>Helli 1 High School</h3>
-                        <p class="date">September 2018 - August 2020</p>
-                        <p>Diploma in Mathematics</p>
-                        <p>GPA: 19.83 / 20.00</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="experience">
-                <h2><i class="fas fa-briefcase"></i> JOB EXPERIENCE</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <h3>Java Developer</h3>
-                        <p class="date">January 2022 - November 2022</p>
-                        <p class="company">SabaPardazesh</p>
-                        <ul>
-                            <li>Worked on SIB, SEIB, and AVAORM projects</li>
-                            <li>Used OOP, SQL, Docker, Spring framework</li>
-                        </ul>
-                    </div>
-                    <div class="timeline-item">
-                        <h3>Algorithmic & AI Trading</h3>
-                        <p class="date">September 2024 - Present</p>
-                        <p class="company">Tajrishi Group</p>
-                        <ul>
-                            <li>Converting strategies into Python and MQL5 code</li>
-                            <li>Using deep neural networks (ResNet and LSTM)</li>
-                        </ul>
-                    </div>
-                    <div class="timeline-item">
-                        <h3>Deep Learning - Image Processing</h3>
-                        <p class="date">June 2024 - Present</p>
-                        <p class="company">Imam Khomeini Hospital</p>
-                        <ul>
-                            <li>Improving U-NetR for vascular segmentation on MRI images</li>
-                            <li>Implementing network and preprocessing on Raw MRI Data</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class="research">
-                <h2><i class="fas fa-flask"></i> RESEARCH EXPERIENCE</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <h3>Decision Making (Neuroscience) Research</h3>
-                        <p class="date">August 2023 - Present</p>
-                        <p class="company">Sharif University of Technology - IPM Institute</p>
-                        <ul>
-                            <li>Conducted literature review and formulated research ideas</li>
-                            <li>Collected EEG, Behavioral, and eye-tracking data</li>
-                            <li>Used image processing and mathematical methodologies</li>
-                        </ul>
-                    </div>
-                    <div class="timeline-item">
-                        <h3>Attention & Reward (Neuroscience) Summer Internship</h3>
-                        <p class="date">June 2023 - September 2023</p>
-                        <p class="company">Sharif University of Technology</p>
-                        <ul>
-                            <li>Focused on Parkinson's disease research</li>
-                            <li>Collected and analyzed Local Field Potential (LFP) data</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class="skills">
-                <h2><i class="fas fa-tools"></i> SKILLS</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Programming Languages</h3>
-                        <div class="skill-tags">
-                            <span>Python</span>
-                            <span>MATLAB</span>
-                            <span>C/C++</span>
-                            <span>HTML/CSS</span>
-                            <span>SQL/MySQL</span>
-                            <span>LATEX</span>
-                            <span>Golang</span>
-                            <span>Java</span>
-                            <span>R</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Tools</h3>
-                        <div class="skill-tags">
-                            <span>EEGLab</span>
-                            <span>Psychtoolbox</span>
-                            <span>MIPS/8085/8051</span>
-                            <span>P/LT/H spice</span>
-                            <span>Javafx/Java Swing</span>
-                            <span>Docker</span>
-                            <span>Kubernetes</span>
-                            <span>Github</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Languages</h3>
-                        <div class="skill-tags">
-                            <span>Persian (Native)</span>
-                            <span>English (TOEFL: 93)</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="achievements">
-                <h2><i class="fas fa-trophy"></i> ACHIEVEMENTS</h2>
-                <ul>
-                    <li>Top 20% in Electrical Engineering students at Sharif University of Technology</li>
-                    <li>Only student to pursue dual degrees in Electrical Engineering and Computer Science among those admitted to Sharif University of Technology in 2020</li>
-                    <li><b>Achieved 20th rank out of 170,000 mathematical science high school students in Iran's universities entrance exam (13th in first region)</b></li>
-                </ul>
-            </section>
-
-            <section class="hobbies">
-                <h2><i class="fas fa-heart"></i> HOBBIES</h2>
-                <div class="hobbies-list">
-                    <span><i class="fas fa-futbol"></i> Football (Once a week)</span>
-                    <span><i class="fas fa-swimmer"></i> Swimming (Twice a week)</span>
-                </div>
-            </section>
-
-            <section class="course-projects">
-                <h2><i class="fas fa-project-diagram"></i> COURSE PROJECTS</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <h3>Download Manager</h3>
-                        <p class="date">March 2025</p>
-                        <p class="company">Computer Technology</p>
-                        <ul>
-                            <li>Implemented an amazing Download Manager using Golang (Bubbletea Library) and Sqlite3</li>
-                            <li>Used different concepts such as channels, mutex, structs</li>
-                        </ul>
-                    </div>
-                    <div class="timeline-item">
-                        <h3>Online Judge</h3>
-                        <p class="date">April 2025</p>
-                        <p class="company">Computer Technology</p>
-                        <ul>
-                            <li>Implemented an amazing Online Judge platform (similar to Quera) using Golang, HTML, CSS, docker, github and other concepts and tools</li>
-                        </ul>
-                    </div>
-                    <div class="timeline-item">
-                        <h3>Farm Frenzy Game</h3>
-                        <p class="date">April 2021</p>
-                        <p class="company">OOP Programming</p>
-                        <ul>
-                            <li>Implemented Farm Frenzy game in java language</li>
-                        </ul>
-                    </div>
-                    <div class="timeline-item">
-                        <h3>Simulations in Neural Encoding (1) & (2)</h3>
-                        <p class="date">January & February 2023</p>
-                        <p class="company">Advanced Topics in Neuroscience</p>
-                        <ul>
-                            <li>Conducted simulations on (Leaky) Integrate and Fire Neuron based on [Softky & Koch, 1993]</li>
-                            <li>Studied the population response structure according to [Constantinidis, C. and Steinmetz, M.A., 2001]</li>
-                        </ul>
-                    </div>
-                    <div class="timeline-item">
-                        <h3>Noise Correlation</h3>
-                        <p class="date">March 2023</p>
-                        <p class="company">Advanced Topics in Neuroscience</p>
-                        <ul>
-                            <li>Investigated spatial and temporal scales of neuronal correlation in the primary visual cortex based on [Smith, Matthew A., and Adam Kohn, 2008]</li>
-                        </ul>
-                    </div>
-                    <div class="timeline-item">
-                        <h3>Decision Making</h3>
-                        <p class="date">May 2023</p>
-                        <p class="company">Visual Neuroscience</p>
-                        <ul>
-                            <li>Studied a recurrent network mechanism of time integration in perceptual decisions based on [KF Wong, XJ Wang - 2006]</li>
-                        </ul>
-                    </div>
-                    <div class="timeline-item">
-                        <h3>Traveling Waves in LFP Data</h3>
-                        <p class="date">April 2023</p>
-                        <p class="company">Advanced Topics in Neuroscience</p>
-                        <ul>
-                            <li>Investigated cortical traveling waves in array datasets based on [Lyle Muller, Frédéric Chavane, John Reynolds, and Terrence J. Sejnowski, 2018]</li>
-                        </ul>
-                    </div>
-                    <div class="timeline-item">
-                        <h3>Motivation and Classical Conditioning & Reinforcement Learning</h3>
-                        <p class="date">April & May 2023</p>
-                        <p class="company">Advanced Topics in Neuroscience</p>
-                        <ul>
-                            <li>Modeled learning in classical conditioning paradigms</li>
-                            <li>Worked on learning the Water Maze</li>
-                        </ul>
-                    </div>
-                    <div class="timeline-item">
-                        <h3>EEG-Based Classification</h3>
-                        <p class="date">January 2023</p>
-                        <p class="company">Foundations of Neuroscience</p>
-                        <ul>
-                            <li>Conducted EEG-based classification of bistable perception neural responses and investigated the impact of tACS</li>
-                        </ul>
-                    </div>
-                    <div class="timeline-item">
-                        <h3>Pattern Recognition</h3>
-                        <p class="date">January 2023</p>
-                        <p class="company">Biological Computations</p>
-                        <ul>
-                            <li>Improved BCI performance through individually adapted imagery</li>
-                        </ul>
-                    </div>
-                </div>
-                <p class="github-note"><i class="fab fa-github"></i> Please check my Github to see all the reports and codes and all other projects and important homeworks.</p>
-            </section>
-
-            <section class="other-experiences">
-                <h2><i class="fas fa-chalkboard-teacher"></i> OTHER EXPERIENCES</h2>
-                <div class="experience-grid">
-                    <div class="experience-category">
-                        <h3>Teaching Assistant (TA) Experiences</h3>
-                        <p class="company">Sharif University of Technology</p>
-                        <ul>
-                            <li>Brain and Machine Learning - R. Ebrahimpour</li>
-                            <li>Visual Neuroscience - R. Ebrahimpour</li>
-                            <li>Introduction To Machine Learning - E. Fatemizadeh (Head TA)</li>
-                            <li>Biological Computations - S. Hajipour</li>
-                            <li>Electronics II - F. Akbar</li>
-                            <li>Engineering Mathematics - M. Namvar</li>
-                            <li>Logic Circuits & Digital Systems - Laleh Arshadi</li>
-                            <li>Electrical Circuits Theory - E. Fatemizadeh (Head TA)</li>
-                            <li>Electrical Circuits & Lab - E. Fatemizadeh, MB. Shamsollahi</li>
-                            <li>Electrical Circuits Theory - S. Bayat</li>
-                            <li>Introduction to Electrical Engineering - A. Amini</li>
-                            <li>Fundamentals of Programming - B. Vosoughi Vahdat</li>
-                            <li>Object Oriented Programming - B. Vosoughi Vahdat</li>
-                        </ul>
-                    </div>
-                    <div class="experience-category">
-                        <h3>Co-Head of Rasta Neuroscience Workshop</h3>
-                        <p class="date">August 2023</p>
-                        <p class="company">Sharif University of Technology</p>
-                        <ul>
-                            <li>Co-led the organization and execution of the Neuroscience Workshop for Rasta community</li>
-                            <li>Coordinated with 12 other members to ensure the workshop's success</li>
-                        </ul>
-                    </div>
-                    <div class="experience-category">
-                        <h3>Co-Head of Resana RL Workshop</h3>
-                        <p class="date">September 2023</p>
-                        <p class="company">Sharif University of Technology - EE</p>
-                        <ul>
-                            <li>Co-led the organization and execution of the Reinforcement Learning Workshop for Resana community</li>
-                        </ul>
-                    </div>
-                    <div class="experience-category">
-                        <h3>Student Council Member</h3>
-                        <p class="date">July 2021 - April 2023</p>
-                        <p class="company">Sharif University of Technology - EE</p>
-                        <ul>
-                            <li>Elected member of the Student Council in the Electrical Engineering department</li>
-                            <li>Collaborated with 6 other members to represent and address students' concerns</li>
-                        </ul>
-                    </div>
-                    <div class="experience-category">
-                        <h3>Academic Counsellor & Mathematics Teacher</h3>
-                        <p class="date">October 2021 - June 2022</p>
-                        <p class="company">Helli 1 High School</p>
-                        <ul>
-                            <li>Taught mathematics to 10 students</li>
-                            <li>9 students entered Computer Engineering and 1 entered Electrical Engineering at Sharif University of Tech</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-        </main>
+        <section class="quick-links">
+            <h2>Quick Access</h2>
+            <div class="link-grid">
+                <a href="education.html" class="link-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Education</h3>
+                    <p>View my academic background and qualifications</p>
+                </a>
+                <a href="experience.html" class="link-card">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Experience</h3>
+                    <p>Explore my professional journey and projects</p>
+                </a>
+                <a href="skills.html" class="link-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Skills</h3>
+                    <p>Discover my technical expertise and capabilities</p>
+                </a>
+                <a href="achievements.html" class="link-card">
+                    <i class="fas fa-trophy"></i>
+                    <h3>Achievements</h3>
+                    <p>Check out my notable accomplishments</p>
+                </a>
+            </div>
+        </section>
     </div>
-    <script src="script.js"></script>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // Email copy functionality
+        const emailLink = document.getElementById('emailLink');
+        const copyMessage = document.getElementById('copyMessage');
+
+        emailLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            const email = 'mohammadbeigi@ee.sharif.edu';
+            navigator.clipboard.writeText(email).then(() => {
+                copyMessage.style.display = 'block';
+                setTimeout(() => {
+                    copyMessage.style.display = 'none';
+                }, 2000);
+            });
+        });
+    </script>
 </body>
 </html> 

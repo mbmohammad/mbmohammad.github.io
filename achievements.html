@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements - Mohammad Mohammad Beigi</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="profile.jpg" alt="Profile" class="nav-profile-img">
+                <span>Mohammad Mohammad Beigi</span>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="education.html"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                <li><a href="experience.html"><i class="fas fa-briefcase"></i> Experience</a></li>
+                <li><a href="skills.html"><i class="fas fa-code"></i> Skills</a></li>
+                <li><a href="achievements.html" class="active"><i class="fas fa-trophy"></i> Achievements</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Achievements Section -->
+    <main class="container">
+        <section class="achievements-section">
+            <h1>Achievements & Recognition</h1>
+            
+            <div class="achievements-categories">
+                <div class="achievement-category">
+                    <h2><i class="fas fa-award"></i> Academic Achievements</h2>
+                    <div class="achievements-grid">
+                        <div class="achievement-card">
+                            <div class="achievement-icon">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <h3>Top 20% in Electrical Engineering</h3>
+                            <p class="achievement-date">2020 - Present</p>
+                            <p class="achievement-description">
+                                Ranked among the top 20% of Electrical Engineering students at Sharif University of Technology.
+                            </p>
+                        </div>
+                        <div class="achievement-card">
+                            <div class="achievement-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h3>Dual Degree Achievement</h3>
+                            <p class="achievement-date">2020</p>
+                            <p class="achievement-description">
+                                Only student to pursue dual degrees in Electrical Engineering and Computer Science among those admitted to Sharif University of Technology in 2020.
+                            </p>
+                        </div>
+                        <div class="achievement-card">
+                            <div class="achievement-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <h3>University Entrance Exam</h3>
+                            <p class="achievement-date">2020</p>
+                            <p class="achievement-description">
+                                Achieved 20th rank out of 170,000 mathematical science high school students in Iran's universities entrance exam (13th in first region).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html> 
