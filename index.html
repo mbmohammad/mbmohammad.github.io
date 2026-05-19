@@ -108,6 +108,21 @@
   .theme-toggle:hover{border-color:var(--accent);color:var(--accent-2)}
   .theme-toggle svg{width:16px;height:16px}
 
+  /* hamburger — hidden on desktop, shown on mobile via media query */
+  .nav-burger{
+    display:none;background:var(--surface);border:1px solid var(--border);
+    width:36px;height:36px;border-radius:10px;cursor:pointer;padding:0;
+    align-items:center;justify-content:center;flex-direction:column;gap:4px;
+    transition:all .15s ease;
+  }
+  .nav-burger span{
+    display:block;width:18px;height:2px;background:var(--text);border-radius:2px;
+    transition:transform .25s ease, opacity .2s ease;
+  }
+  .nav-burger[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+  .nav-burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .nav-burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
   /* ---------- LAYOUT ---------- */
   main{max-width:var(--max);margin:0 auto;padding:0 1.25rem}
   section{padding:5rem 0 2rem;scroll-margin-top:80px}
@@ -274,16 +289,29 @@
 
   /* ---------- RESPONSIVE — tablet & phone ---------- */
   @media (max-width:900px){
-    /* nav: horizontal-scrolling chip strip instead of wrapping */
-    .nav-inner{padding:.55rem .9rem;gap:.5rem}
-    .brand{font-size:.92rem;flex-shrink:0}
-    .nav ul{
-      flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;
-      scrollbar-width:none;mask-image:linear-gradient(90deg,#000 92%,transparent);
+    .nav-inner{padding:.6rem .9rem;gap:.5rem;justify-content:space-between}
+    .brand{font-size:.95rem;flex-shrink:0;margin-right:auto}
+    .nav-burger{display:inline-flex}
+    /* hide the link list by default; reveal as a dropdown panel when open */
+    #navList{
+      position:absolute;top:100%;left:0;right:0;
+      display:none;flex-direction:column;gap:0;
+      background:color-mix(in oklab, var(--bg) 96%, transparent);
+      backdrop-filter:saturate(160%) blur(14px);
+      -webkit-backdrop-filter:saturate(160%) blur(14px);
+      border-bottom:1px solid var(--border);
+      padding:.5rem .9rem 1rem;margin:0;
+      box-shadow:0 14px 30px rgba(0,0,0,.25);
     }
-    .nav ul::-webkit-scrollbar{display:none}
-    .nav a.link{font-size:.82rem;padding:.4rem .6rem;white-space:nowrap}
-    .theme-toggle{flex-shrink:0;width:34px;height:34px}
+    .nav.open #navList{display:flex}
+    #navList li{width:100%}
+    #navList a.link{
+      display:block;width:100%;padding:.7rem .8rem;font-size:.95rem;
+      border-radius:8px;border:1px solid transparent;
+    }
+    #navList a.link:hover,
+    #navList a.link.active{background:var(--surface);border-color:var(--border)}
+    .theme-toggle{flex-shrink:0;width:36px;height:36px}
   }
 
   @media (max-width:780px){
@@ -339,10 +367,10 @@
 </head>
 <body>
 
-<nav class="nav" aria-label="Primary">
+<nav class="nav" id="nav" aria-label="Primary">
   <div class="nav-inner">
     <a href="#top" class="brand">mohammad<span class="dot">.</span></a>
-    <ul>
+    <ul id="navList">
       <li><a class="link" href="#about">About</a></li>
       <li><a class="link" href="#education">Education</a></li>
       <li><a class="link" href="#publications">Publications</a></li>
@@ -354,6 +382,9 @@
     </ul>
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+    <button class="nav-burger" id="navBurger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navList">
+      <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
@@ -782,6 +813,29 @@
       root.setAttribute('data-theme', next);
       localStorage.setItem('theme', next);
     });
+  })();
+
+  // Mobile hamburger menu
+  (function(){
+    const nav = document.getElementById('nav');
+    const burger = document.getElementById('navBurger');
+    const list = document.getElementById('navList');
+    if(!burger) return;
+    const close = () => { nav.classList.remove('open'); burger.setAttribute('aria-expanded','false'); };
+    const open  = () => { nav.classList.add('open'); burger.setAttribute('aria-expanded','true'); };
+    burger.addEventListener('click', () => {
+      nav.classList.contains('open') ? close() : open();
+    });
+    // close when a link is tapped
+    list.addEventListener('click', e => {
+      if(e.target.closest('a.link')) close();
+    });
+    // close on outside tap
+    document.addEventListener('click', e => {
+      if(!nav.contains(e.target) && nav.classList.contains('open')) close();
+    });
+    // close on Escape
+    document.addEventListener('keydown', e => { if(e.key === 'Escape') close(); });
   })();
 
   // Scrollspy — highlight active nav link
